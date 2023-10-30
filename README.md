@@ -1,4 +1,4 @@
-# README - Conclusão de Bootcamps e Cursos DIO
+# Bootcamps e Cursos DIO
 
 Olá! Bem-vindo ao repositório dedicado à conclusão de bootcamps e cursos da plataforma de estudo Digital Innovation One (DIO). Este repositório é organizado por bootcamps e tem como objetivo compartilhar o progresso e as conquistas alcançadas durante a jornada de aprendizado na DIO.
 
