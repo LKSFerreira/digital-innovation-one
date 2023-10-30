@@ -13,6 +13,8 @@ Este repositório está estruturado da seguinte maneira:
 
 Para navegar neste repositório, basta clicar no diretório do bootcamp de seu interesse. Lá, você encontrará os projetos e atividades concluídas.
 
+[Roadmap](https://glysns.gitbook.io/java-basico)
+
 <details>
   <summary>Formação Java Developer</summary>
   
