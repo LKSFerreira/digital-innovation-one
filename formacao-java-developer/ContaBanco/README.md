@@ -1,10 +1,10 @@
 # DIO - Trilha Java Básico
 [www.dio.me/trilha-java-basico](https://web.dio.me/track/81c4cf08-5cef-43f6-a579-1e0158bd9da6)
 
-#### Autores
+#### Alunos
 - [Lucas Ferreira](https://github.com/LKSFerreira)
 
-#### Instrutores
+#### Autores e Instrutores
 - [Gleyson Sampaio](https://github.com/glysns)
 
 ## Sintaxe - Desafio
