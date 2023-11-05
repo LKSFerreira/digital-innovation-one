@@ -19,5 +19,11 @@ public class App {
         minhaArvore.exibirPreOrdem();
         minhaArvore.exbirPosOrdem();
 
+        minhaArvore.insert(new Obj(32));
+
+        minhaArvore.exibirInOrdem();
+        minhaArvore.exibirPreOrdem();
+        minhaArvore.exbirPosOrdem();
+
     }
 }
