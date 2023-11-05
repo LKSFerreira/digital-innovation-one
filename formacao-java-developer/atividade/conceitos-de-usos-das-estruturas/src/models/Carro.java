@@ -4,6 +4,10 @@ public class Carro {
 
     private String marca;
 
+    public Carro(String marca) {
+        this.marca = marca;
+    }
+
     @Override
     public int hashCode() {
         return (int) marca.hashCode();
@@ -24,5 +28,12 @@ public class Carro {
     public void setMarca(String marca) {
         this.marca = marca;
     }
+
+    @Override
+    public String toString() {
+        return "Carro [marca = " + marca + "]";
+    }
+
+    
 
 }
