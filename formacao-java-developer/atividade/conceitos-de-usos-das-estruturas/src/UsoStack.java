@@ -5,6 +5,7 @@ import models.Carro;
 public class UsoStack {
     
     public static void main(String[] args) throws Exception {
+        // Principais métodos da classe Stack e suas aplicabilidades
         Stack<Carro> stackCarros = new Stack<Carro>();
 
         // Adiciona elementos na pilha
