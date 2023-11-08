@@ -1,7 +1,5 @@
 package models;
 
-import java.util.Comparator;
-
 public class Gato implements Comparable<Gato> {
     private String nome;
     private Integer idade;

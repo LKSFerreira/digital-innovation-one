@@ -25,7 +25,7 @@ public class Lista {
         // LinkedList implementa as interfaces List e Queue
 
         // Formas de inicializar um ArrayList
-        List notas1 = new ArrayList();
+        List notas1 = new ArrayList<>();
         List<Double> notas2 = new ArrayList<>();
         ArrayList<Double> notas3 = new ArrayList<>();
         ArrayList<Double> notas4 = new ArrayList<>(20); // Define o tamanho inicial do array interno
@@ -34,7 +34,7 @@ public class Lista {
         List<Double> notas7 = List.of(7d, 8.5, 9.3, 5d, 7d, 0d, 3.6); // Retorna um ArrayList imutável
 
         // Exercício: Crie uma lista de notas e adicione 7 notas
-        List<Double> notas = new ArrayList();
+        List<Double> notas = new ArrayList<>();
         notas.add(7.0);
         notas.add(8.5);
         notas.add(9.3);
