@@ -1,21 +1,24 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class Exercicio3IOCaracter {
     public static void main(String[] args) {
         try {
-            adicionarInfoEmArquivo();
+            copiarArquivoAdicionandoInformacoes();
         } catch (IOException e) {
             System.out.println("Erro ao adicionar informações em arquivo: " + e.getMessage());
         }
     }
 
-    private static void adicionarInfoEmArquivo() throws IOException {
+    private static void copiarArquivoAdicionandoInformacoes() throws IOException {
         File file = new File("filmes.txt");
         String arquivoNome = file.getName();
 
@@ -26,7 +29,7 @@ public class Exercicio3IOCaracter {
 
         String arquivoNomeCopia = arquivoNome.substring(0, arquivoNome.indexOf(".")).concat("-copia.txt");
 
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(arquivoNomeCopia));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(arquivoNomeCopia, StandardCharsets.UTF_8));
 
         do {
             bufferedWriter.write(line);
@@ -35,10 +38,39 @@ public class Exercicio3IOCaracter {
             line = bufferedReader.readLine();
         } while (line != null);
 
-        bufferedReader.close();
-
         System.out.println("Arquivo " + arquivoNome + " copiado com sucesso!");
         System.out.println("Arquivo " + arquivoNomeCopia + " criado com sucesso!");
+
+        PrintWriter printWriter = new PrintWriter(System.out);
+        printWriter.println("Escreva 3 filmes para recomendar: ");
+        printWriter.flush();
+        printWriter.close();
+
+        adicionarInformacoesEmArquivo(arquivoNomeCopia);
+
+        bufferedReader.close();
+        bufferedWriter.close();
+
+    }
+
+    private static void adicionarInformacoesEmArquivo(String arquivoNomeCopia) throws IOException {
+
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        String line = bufferedReader.readLine();
+
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(arquivoNomeCopia, true));
+
+        do {
+            bufferedWriter.write(line);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+            line = bufferedReader.readLine();
+        } while (!line.equals("fim"));
+
+        System.out.println("Arquivo " + arquivoNomeCopia + " atualizado com sucesso!");
+
+        bufferedReader.close();
+        bufferedWriter.close();
 
     }
 }
