@@ -23,13 +23,13 @@ public class RandomText {
         int contador = 0;
         do {
             // Gera um número aleatório entre 65 e 115, incluindo o 65 e 115;
-            random = (int) (Math.random() * 50) + 65;
+            random = (int) (Math.random() * 49) + 65;
 
             bufferedOutputStream.write((char) random);
             bufferedOutputStream.flush();
             contador++;
         
-        } while (contador < 50000);
+        } while (contador < 10000);
 
         bufferedOutputStream.close();
         System.out.println("tamnho do arquivo: " + randomFile.length() + " bytes");
