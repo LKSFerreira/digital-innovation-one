@@ -103,6 +103,7 @@
 		antes do método retorna.
 		
 		- **@NonNull**: Ajuda a evitar exceções NullPointerException.
+		
 		- **@Synchronized**: Um bloqueio seguro para métodos e blocos de código.
 		
 		O elemento `optional` quando definido como `true`, indica que a dependência não é necessária para
