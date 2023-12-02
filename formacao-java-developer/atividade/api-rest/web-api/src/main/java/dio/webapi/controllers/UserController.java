@@ -1,4 +1,4 @@
-package dio.webapi.controller;
+package dio.webapi.controllers;
 
 import java.util.List;
 import java.util.UUID;
