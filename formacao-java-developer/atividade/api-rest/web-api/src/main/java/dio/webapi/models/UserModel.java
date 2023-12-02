@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
@@ -12,6 +13,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+@Component
+@Scope("prototype")
 @Data
 @Entity(name = "tb_users")
 public class UserModel {
@@ -35,11 +38,13 @@ public class UserModel {
     @CreationTimestamp
     private LocalDateTime createdAt;
 
+    public UserModel() {
+    }
+
     public UserModel(String name, String username, String password, String email) {
         this.name = name;
         this.username = username;
         this.password = password;
         this.email = email;
     }
-
 }

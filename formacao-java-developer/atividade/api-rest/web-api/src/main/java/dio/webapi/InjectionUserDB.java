@@ -1,11 +1,11 @@
 package dio.webapi;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import dio.webapi.Repository.IUserRepository;
@@ -20,14 +20,14 @@ public class InjectionUserDB implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		List<UserModel> users = new ArrayList<>();
+		List<UserModel> users = new ArrayList<>(Arrays.asList(
+				new UserModel("Administrador Atos", "admin", "admin", "admin@atos.net"),
+				new UserModel("Usuario Atos", "user", "user", "user@atos.net"),
+				new UserModel("Fulano de Tal", "fulano", "fulano", "fulano@atos.net"),
+				new UserModel("Ciclano de Tal", "ciclano", "ciclano", "ciclano@anots.net"),
+				new UserModel("Beltrano de Tal", "beltrano", "beltrano", "beltrano@atos.net")));
 
-		users.add(new UserModel("Administrador", "admin", "admin", "admin@test.net"));
-		users.add(new UserModel("Fulano de Tal", "fulano", "123456", "fulano@test.net"));
-		users.add(new UserModel("Ciclano de Tal", "ciclano", "123456", "ciclano@test.net"));
-		users.add(new UserModel("Beltrano de Tal", "beltrano", "123456", "beltrano@test.net"));
-
-		users.forEach(userServiceImpl::save);
+		userServiceImpl.saveAll(users);
 	}
 
 }
