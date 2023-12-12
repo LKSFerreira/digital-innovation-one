@@ -24,8 +24,8 @@ import lombok.NoArgsConstructor;
 public class MatriculaModel {
 
   @Id
-  @GeneratedValue(generator = "UUID")
-  private UUID id;
+  @GeneratedValue(generator = "Long")
+  private Long id;
 
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "aluno_id", nullable = false)
@@ -35,5 +35,5 @@ public class MatriculaModel {
   @Column(name = "data_matricula", nullable = false)
   @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss")
   private LocalDateTime dataDaMatricula;
-  
+
 }

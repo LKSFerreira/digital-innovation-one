@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ferreira.crudrestapidatajpa.models.AlunoModel;
 import ferreira.crudrestapidatajpa.models.form.AlunoForm;
 import ferreira.crudrestapidatajpa.services.impl.AlunoServiceImpl;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/alunos")
@@ -26,7 +27,7 @@ public class AlunoController {
   }
 
   @PostMapping
-  public AlunoModel create(@RequestBody AlunoForm form) {
+  public AlunoModel create(@Valid @RequestBody AlunoForm form) {
     return alunoServiceImpl.create(form);
   }
 }

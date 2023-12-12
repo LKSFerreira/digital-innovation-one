@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ferreira.crudrestapidatajpa.models.AvaliacaoFisicaModel;
 import ferreira.crudrestapidatajpa.models.form.AvaliacaoFisicaForm;
 import ferreira.crudrestapidatajpa.services.impl.AvaliacaoFisicaServiceImpl;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/avaliacoes")
@@ -39,7 +40,7 @@ public class AvaliacaoFisicaController {
   }
 
   @GetMapping("/aluno/{alunoId}")
-  public List<AvaliacaoFisicaModel> getAllByAlunoId(@PathVariable UUID alunoId) {
+  public List<AvaliacaoFisicaModel> getAllByAlunoId(@Valid @PathVariable UUID alunoId) {
     return avaliacaoFisicaServiceImpl.getAllByAlunoId(alunoId);
   }
 

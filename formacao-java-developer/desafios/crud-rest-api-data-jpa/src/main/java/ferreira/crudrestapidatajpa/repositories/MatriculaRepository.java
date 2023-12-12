@@ -1,5 +1,9 @@
 package ferreira.crudrestapidatajpa.repositories;
 
-public interface MatriculaRepository {
-  
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import ferreira.crudrestapidatajpa.models.MatriculaModel;
+
+public interface MatriculaRepository extends JpaRepository<MatriculaModel, Long> {
+
 }
