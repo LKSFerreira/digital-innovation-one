@@ -1,7 +1,6 @@
 package ferreira.crudrestapidatajpa.models;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;

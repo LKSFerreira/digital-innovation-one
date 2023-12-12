@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ferreira.crudrestapidatajpa.models.AlunoModel;
@@ -22,12 +23,13 @@ public class AlunoController {
   private AlunoServiceImpl alunoServiceImpl;
 
   @GetMapping
-  public List<AlunoModel> getAll() {
-    return alunoServiceImpl.getAll();
+  public List<AlunoModel> getAll(@RequestParam(value = "dataNascimento") String dataNascimento) {
+    return alunoServiceImpl.getAll(dataNascimento);
   }
 
   @PostMapping
   public AlunoModel create(@Valid @RequestBody AlunoForm form) {
     return alunoServiceImpl.create(form);
   }
+
 }

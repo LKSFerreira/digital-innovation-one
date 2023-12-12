@@ -1,5 +1,7 @@
 package ferreira.crudrestapidatajpa.services.impl;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,7 +22,7 @@ public class AlunoServiceImpl implements IAlunoService {
 
   @Override
   public AlunoModel create(AlunoForm form) {
-    
+
     AlunoModel aluno = new AlunoModel();
     aluno.setNome(form.getNome());
     aluno.setCpf(form.getCpf());
@@ -37,10 +39,11 @@ public class AlunoServiceImpl implements IAlunoService {
   }
 
   @Override
-  public List<AlunoModel> getAll() {
-
+  public List<AlunoModel> getAll(String dataNascimento) {
+    if (dataNascimento != null) {
+      return getAllByDataNascimento(dataNascimento);
+    }
     return alunoRepository.findAll();
-
   }
 
   @Override
@@ -53,6 +56,11 @@ public class AlunoServiceImpl implements IAlunoService {
   public void delete(UUID id) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'delete'");
+  }
+
+  public List<AlunoModel> getAllByDataNascimento(String dataNascimento) {
+    LocalDate data = LocalDate.parse(dataNascimento, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+    return alunoRepository.findByDataNascimento(data);
   }
 
 }
