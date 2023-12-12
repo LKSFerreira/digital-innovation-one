@@ -35,7 +35,7 @@ public interface IAvaliacaoFisicaService {
    * Física no banco de dados.
    * @return - Avaliação Física recém-atualizada.
    */
-  AvaliacaoFisicaModel update(Long id, AvaliacaoFisicaUpdateForm formUpdate);
+  AvaliacaoFisicaModel update(UUID id, AvaliacaoFisicaUpdateForm formUpdate);
 
   /**
    * Deleta uma Avaliação Física específica.

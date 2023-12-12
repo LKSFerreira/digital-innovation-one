@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -39,8 +40,11 @@ public class AlunoModel {
   @Column(nullable = false, length = 11, unique = true) // Características da coluna no db.
   private String cpf;
 
+  @Column(nullable = false, length = 100) // Características da coluna no db.
+  private String bairro;
+
   @Column(nullable = false, length = 10, name = "data_nascimento") // Características da coluna no db.
-  @DateTimeFormat(pattern = "dd-MM-yyyy")
+  @JsonFormat(pattern = "dd-MM-yyyy") // Spring para indicar o formato da data
   private LocalDate dataNascimento;
 
   @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY) // Jakarta Persistence para indicar que o atributo é uma relação de um para muitos
