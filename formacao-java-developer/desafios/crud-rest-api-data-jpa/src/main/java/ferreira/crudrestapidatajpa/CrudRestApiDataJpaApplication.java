@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CrudRestApiDataJpaApplication {
 
 	public static void main(String[] args) {
+    
 		SpringApplication.run(CrudRestApiDataJpaApplication.class, args);
+
 	}
 
 }

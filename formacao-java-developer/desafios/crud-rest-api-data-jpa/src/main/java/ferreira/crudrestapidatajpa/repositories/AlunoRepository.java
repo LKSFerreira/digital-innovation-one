@@ -9,5 +9,5 @@ import ferreira.crudrestapidatajpa.models.AlunoModel;
 
 @Repository
 public interface AlunoRepository extends JpaRepository<AlunoModel, UUID> {
-
+  
 }

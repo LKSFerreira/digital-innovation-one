@@ -20,6 +20,7 @@ public class AlunoServiceImpl implements IAlunoService {
 
   @Override
   public AlunoModel create(AlunoForm form) {
+    
     AlunoModel aluno = new AlunoModel();
     aluno.setNome(form.getNome());
     aluno.setCpf(form.getCpf());
@@ -37,7 +38,9 @@ public class AlunoServiceImpl implements IAlunoService {
 
   @Override
   public List<AlunoModel> getAll() {
+
     return alunoRepository.findAll();
+
   }
 
   @Override

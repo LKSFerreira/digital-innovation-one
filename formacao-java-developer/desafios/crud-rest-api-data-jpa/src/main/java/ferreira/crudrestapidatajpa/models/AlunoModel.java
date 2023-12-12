@@ -50,4 +50,5 @@ public class AlunoModel {
   @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY) // Jakarta Persistence para indicar que o atributo é uma relação de um para muitos
   @JsonIgnore
   private List<AvaliacaoFisicaModel> avaliacoesFisicas = new ArrayList<>();
+  
 }

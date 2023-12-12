@@ -35,4 +35,5 @@ public class MatriculaModel {
   @Column(name = "data_matricula", nullable = false)
   @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss")
   private LocalDateTime dataDaMatricula;
+  
 }

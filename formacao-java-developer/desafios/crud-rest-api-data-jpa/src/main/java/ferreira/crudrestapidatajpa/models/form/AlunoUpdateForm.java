@@ -10,4 +10,5 @@ public class AlunoUpdateForm {
   private String bairro;
 
   private LocalDate dataDeNascimento;
+  
 }

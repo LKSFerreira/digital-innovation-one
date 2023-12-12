@@ -36,6 +36,10 @@ public class AvaliacaoFisicaModel {
   @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss") // Formato da data e hora da avaliação
   private LocalDateTime dataDaAvaliacao;
 
+  @Column(nullable = false, precision = 2, name = "peso_atual")
   private Double peso;
+
+  @Column(nullable = false, precision = 2, name = "altura_atual")
   private Double altura;
+  
 }
