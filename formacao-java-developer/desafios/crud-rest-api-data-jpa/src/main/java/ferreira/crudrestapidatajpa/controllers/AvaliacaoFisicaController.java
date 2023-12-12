@@ -38,9 +38,9 @@ public class AvaliacaoFisicaController {
     return avaliacaoFisicaServiceImpl.getById(id);
   }
 
-  @GetMapping("aluno/{id}")
-  public List<AvaliacaoFisicaModel> getAllByAlunoId(@PathVariable UUID id) {
-    return avaliacaoFisicaServiceImpl.getAllByAlunoId(id);
+  @GetMapping("/aluno/{alunoId}")
+  public List<AvaliacaoFisicaModel> getAllByAlunoId(@PathVariable UUID alunoId) {
+    return avaliacaoFisicaServiceImpl.getAllByAlunoId(alunoId);
   }
 
 }
