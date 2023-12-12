@@ -25,7 +25,7 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
 
   @Override
   public AvaliacaoFisicaModel create(AvaliacaoFisicaForm form) {
-    
+
     AvaliacaoFisicaModel avaliacaoFisica = new AvaliacaoFisicaModel();
 
     AlunoModel aluno = alunoRepository.findById(form.getAlunoId())
@@ -40,9 +40,9 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
   }
 
   @Override
-  public AvaliacaoFisicaModel get(UUID id) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'get'");
+  public AvaliacaoFisicaModel getById(UUID id) {
+    return avaliacaoFisicaRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Avaliação não encontrada"));
   }
 
   @Override
@@ -60,6 +60,14 @@ public class AvaliacaoFisicaServiceImpl implements IAvaliacaoFisicaService {
   public void delete(UUID id) {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'delete'");
+  }
+
+  @Override
+  public List<AvaliacaoFisicaModel> getAllByAlunoId(UUID alunoId) {
+    AlunoModel aluno = alunoRepository.findById(alunoId)
+        .orElseThrow(() -> new RuntimeException("Aluno não encontrado"));
+
+    return aluno.getAvaliacoesFisicas();
   }
 
 }

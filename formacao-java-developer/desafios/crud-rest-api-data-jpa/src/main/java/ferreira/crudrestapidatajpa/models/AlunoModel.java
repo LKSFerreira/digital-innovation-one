@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -50,5 +48,5 @@ public class AlunoModel {
   @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY) // Jakarta Persistence para indicar que o atributo é uma relação de um para muitos
   @JsonIgnore
   private List<AvaliacaoFisicaModel> avaliacoesFisicas = new ArrayList<>();
-  
+
 }

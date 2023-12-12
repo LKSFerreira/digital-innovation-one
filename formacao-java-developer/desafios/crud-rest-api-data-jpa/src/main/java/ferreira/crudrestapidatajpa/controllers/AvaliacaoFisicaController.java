@@ -1,12 +1,15 @@
 package ferreira.crudrestapidatajpa.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ferreira.crudrestapidatajpa.models.AvaliacaoFisicaModel;
@@ -29,4 +32,15 @@ public class AvaliacaoFisicaController {
   public List<AvaliacaoFisicaModel> getAll() {
     return avaliacaoFisicaServiceImpl.getAll();
   }
+
+  @GetMapping("/{id}")
+  public AvaliacaoFisicaModel get(@PathVariable UUID id) {
+    return avaliacaoFisicaServiceImpl.getById(id);
+  }
+
+  @GetMapping("aluno/{id}")
+  public List<AvaliacaoFisicaModel> getAllByAlunoId(@PathVariable UUID id) {
+    return avaliacaoFisicaServiceImpl.getAllByAlunoId(id);
+  }
+
 }

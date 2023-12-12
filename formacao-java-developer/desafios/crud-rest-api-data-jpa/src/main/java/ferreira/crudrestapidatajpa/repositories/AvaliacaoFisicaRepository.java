@@ -9,5 +9,5 @@ import ferreira.crudrestapidatajpa.models.AvaliacaoFisicaModel;
 
 @Repository
 public interface AvaliacaoFisicaRepository extends JpaRepository<AvaliacaoFisicaModel, UUID> {
-  
+
 }
