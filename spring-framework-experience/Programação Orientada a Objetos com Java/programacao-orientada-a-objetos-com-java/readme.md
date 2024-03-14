@@ -489,3 +489,81 @@ carro.buzinar()   # Isso também está correto e é um método estático.
 Observe que o método `buzinar` é um método estático e pode ser chamado diretamente na classe sem criar uma instância. Ele também pode ser chamado em uma instância, mas não tem acesso à instância específica (ou seja, não tem acesso ao `self`).
 
 A linha `Carro.acelerar()` no seu exemplo original não está correta, pois `acelerar` é um método de instância que requer um objeto `Carro` para ser chamado, e você deve passar a instância como argumento se chamar o método diretamente na classe, assim: `Carro.acelerar(carro)`. No entanto, a forma usual e recomendada de chamar um método de instância é através de uma instância da classe, como feito com `carro.acelerar()`.
+
+### Herança
+- É a capacidade de criar uma nova classe a partir de uma classe existente.
+- A nova classe herda os atributos e métodos da classe existente.
+- A classe existente é chamada de classe base ou superclasse.
+- A nova classe é chamada de classe derivada ou subclasse.
+
+A verdadeira utilidade da herança é a capacidade de estender a funcionalidade de uma classe existente sem precisar reescrever o código, podendo assim criar subtipos, ou seja, tipos mais específicos de um tipo existente. O reuso é apenas uma consequência da herança.
+
+Código:
+
+Java:
+```java
+class Veiculo{
+    String cor;
+    String modelo;
+    String marca;
+    int ano;
+
+    public void acelerar(){
+        System.out.println("Acelerando...");
+    }
+}
+
+class Carro extends Veiculo{
+    int portas;
+    int capacidade;
+}
+```
+
+C#:
+```csharp
+class Veiculo{
+    string cor;
+    string modelo;
+    string marca;
+    int ano;
+
+    public void Acelerar(){
+        Console.WriteLine("Acelerando...");
+    }
+}
+
+class Carro : Veiculo{
+    int portas;
+    int capacidade;
+}
+```
+
+Python:
+```python
+class Veiculo:
+    cor = ""
+    modelo = ""
+    marca = ""
+    ano = 0
+
+    def acelerar(self):
+        print("Acelerando...")
+
+class Carro(Veiculo):
+    portas = 0
+    capacidade = 0
+```
+#### Tipos de Herança
+- Herança Simples: Uma classe derivada herda de uma única classe base.
+- Herança Múltipla: Uma classe derivada herda de múltiplas classes base.
+
+Algumas linguagens de programação como Java e C# não suportam herança múltipla, mas permitem a implementação de múltiplas interfaces.
+Já Python suporta herança múltipla.
+
+Código:
+Python:
+```python
+class A(B, C):
+    pass
+```
+
